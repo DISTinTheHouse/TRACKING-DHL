@@ -1,0 +1,26 @@
+{% extends 'layouts/layout.html' %}
+{% block body %}
+<!--CONTENIDO-->
+<div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:text-center">
+        <h2 class="text-base font-semibold leading-7 text-indigo-600">Lazzar México®</h2>
+        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Rastrea tu Envío DHL</p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">Explora el Recorrido de Tu Paquete: Sigue Cada Etapa del Envío con Nuestro Sistema de Seguimiento en Tiempo Real.</p>
+      </div>
+    </div>
+</div>
+
+<div class="flex justify-center items-center mb-6">
+    <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-6">DHL Shipment Tracking</h1>
+        <form action="{% url 'get_shipment_status' %}" method="get">
+            <div class="mb-4">
+                <label for="tracking_id" class="block text-sm font-medium text-gray-700">Ingresa tu numero de guia: </label>
+                <input type="text" id="tracking_id" name="tracking_id" required class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring focus:ring-indigo-300">
+            </div>
+            <button type="submit" class="w-full bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600 transition duration-300">Track Shipment</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
